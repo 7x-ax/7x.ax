@@ -31,10 +31,10 @@ export function Hero() {
           spend long hours sourcing data and designing databases. Leverage our experience and focus on what you do best - building your applications.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
-        <Button color="red" href="/register">Get started today for free</Button>
+        <Button color="red" href="https://app.7x.ax/">Get started today for free</Button>
         <Button
             color="red"
-          href="/"
+          href="https://app.7x.ax/"
           variant="outline"
         >
             <svg
