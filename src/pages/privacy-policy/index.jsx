@@ -1,19 +1,17 @@
 import Head from 'next/head'
 
-import { Faqs } from '@/components/Faqs'
+import { Catalogue } from '@/components/Catalogue'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
-import { Hero } from '@/components/Hero'
-import { Pricing } from '@/components/Pricing'
-import { PrimaryFeatures } from '@/components/PrimaryFeatures'
-import { Terms } from '@/components/Terms'
-import { PrivacyPolicy } from '@/components/PrivacyPolicy'
+import {Terms} from "@/components/Terms";
+import {PrivacyPolicy} from "@/components/PrivacyPolicy";
+
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>7x - APIs for Developers by Developers</title>
+        <title>7x - Privacy Policy</title>
         <meta
           name="description"
           content="A highly available, scalable, affordable API platform and marketplace for app developers."
@@ -21,10 +19,7 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        <Hero />
-        <PrimaryFeatures />
-        <Pricing />
-        <Faqs />
+        <PrivacyPolicy />
       </main>
       <Footer />
     </>
