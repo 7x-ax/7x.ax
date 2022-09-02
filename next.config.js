@@ -15,7 +15,6 @@ const nextConfig = {
       unoptimized: true
     },
   },
-//  distDir: "docs/_next",
 }
 
 //module.exports = nextConfig
