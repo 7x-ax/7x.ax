@@ -34,7 +34,7 @@ export function Hero() {
         <Button color="red" href="https://app.7x.ax/">Get started today for free</Button>
         <Button
             color="red"
-          href="https://app.7x.ax/"
+          href="/catalogue"
           variant="outline"
         >
             <svg
