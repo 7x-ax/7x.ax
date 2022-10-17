@@ -129,7 +129,7 @@ export function Pricing() {
           />
             <Plan
                 featured
-                name="$42.50 per month or $468 per year"
+                name="£42.50 per month or $468 per year"
                 price="7x"
                 description=""
                 href="/register"
@@ -140,7 +140,7 @@ export function Pricing() {
                 ]}
             />
             <Plan
-                name="$22.50 per month or $248 per year"
+                name="£22.50 per month or $248 per year"
                 price="6x"
                 description=""
                 href="/register"
@@ -151,7 +151,7 @@ export function Pricing() {
                 ]}
             />
             <Plan
-                name="$10 per month or $110 per year"
+                name="£10 per month or $110 per year"
                 price="5x"
                 description=""
                 href="/register"
@@ -162,7 +162,7 @@ export function Pricing() {
                 ]}
             />
             <Plan
-                name="$7.50 per month or $82.50 per year"
+                name="£7.50 per month or $82.50 per year"
                 price="4x"
                 description=""
                 href="/register"
@@ -173,7 +173,7 @@ export function Pricing() {
                 ]}
             />
             <Plan
-                name="$3.50 per month or $38.50 per year"
+                name="£3.50 per month or $38.50 per year"
                 price="3x"
                 description=""
                 href="/register"
@@ -184,7 +184,7 @@ export function Pricing() {
                 ]}
             />
           <Plan
-            name="$2.50 per month or $27.50 per year"
+            name="£2.50 per month or $27.50 per year"
             price="2x"
             description=""
             href="/"
