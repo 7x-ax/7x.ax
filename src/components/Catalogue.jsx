@@ -7,11 +7,11 @@ const positions = [
     id: 1,
     title: 'Timezone API',
     availableDocs: 'OpenAPI Specification Available',
-    description: 'An API that returns the timezone for a given set of co-ordinates.',
+    description: 'An API that returns the timezone(s) for a given set of co-ordinates.',
     security: 'Key-based Authentication',
-    publishDate: '2022-10-01',
-    publishDateFull: 'October, 2020',
-    url: '/catalogue/distance-api',
+    publishDate: '2023-01-01',
+    publishDateFull: 'January, 2023',
+    url: '/catalogue/timezone-api',
   },
   {
     id: 2,
@@ -19,11 +19,11 @@ const positions = [
     availableDocs: 'OpenAPI Specification Available',
     description: 'An API that returns the great-circle distance between 2 sets of co-ordinates or 2 addresses.',
     security: 'Key-based Authentication',
-    publishDate: '2022-10-01',
-    publishDateFull: 'October, 2020',
+    publishDate: '2023-01-01',
+    publishDateFull: 'January, 2023',
     url: '/catalogue/distance-api',
-  },
-  {
+  }
+/*  {
     id: 3,
     title: 'Geocoding API',
     availableDocs: 'OpenAPI Specification Available',
@@ -52,7 +52,7 @@ const positions = [
     publishDate: '2022-10-01',
     publishDateFull: 'October, 2020',
     url: '/catalogue/distance-api',
-  },
+  },*/
 ]
 
 export function Catalogue() {

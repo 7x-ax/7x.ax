@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import { OpenApi } from '@/components/OpenApi'
+import { OpenApiDistanceApi } from '@/components/OpenApiDistanceApi'
 
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
         />
       </Head>
       <main>
-        <OpenApi />
+        <OpenApiDistanceApi />
       </main>
     </>
   )

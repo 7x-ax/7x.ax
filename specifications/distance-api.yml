@@ -1,6 +1,6 @@
 swagger: "2.0"
 info:
-  description: "Haversine API by 7x"
+  description: "Haversine Distance API by 7x"
   version: "v1"
   title: "Distance API"
   termsOfService: "https://7x.ax/terms-and-conditions"

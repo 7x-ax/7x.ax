@@ -1,0 +1,39 @@
+swagger: "2.0"
+info:
+  description: "Timezone API by 7x"
+  version: "1 "
+  title: "Timezone API"
+  termsOfService: "https://7x.ax/terms-and-conditions"
+  contact:
+    email: "support@7x.ax"
+host: "api.7x.ax"
+basePath: "/timezone/v1"
+schemes:
+  - "https"
+  - "http"
+paths:
+  /bycoordinates/{coordinates}:
+    get:
+      tags:
+        - "timezone"
+      summary: "Get applicable timezones for a pair of co-ordinates"
+      description: "Returns latitude, longitude and timezone"
+      operationId: "getTimezone"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "coordinates"
+          in: "path"
+          description: "Comma separated co-ordinates in the order of latitude,longitude"
+          required: true
+          type: "string"
+          format: "utf8"
+      responses:
+        "200":
+          description: "Returns an array of applicable Timezones."
+        "400":
+          description: "Invalid Co-ordinates."
+
+externalDocs:
+  description: "Find out more about 7x APIs"
+  url: "http://7x.ax"
