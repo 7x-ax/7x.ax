@@ -1,9 +1,9 @@
 swagger: "2.0"
 info:
   description: "Haversine API by 7x"
-  version: "1 "
+  version: "v1"
   title: "Distance API"
-  termsOfService: "https://7x.ax/terms"
+  termsOfService: "https://7x.ax/terms-and-conditions"
   contact:
     email: "support@7x.ax"
 host: "api.7x.ax"
