@@ -28,6 +28,12 @@ paths:
           required: true
           type: "string"
           format: "utf8"
+        - name: "apikey"
+          in: "query"
+          description: "Your 7x API Key. Get it from https://app.7x.ax for free."
+          required: true
+          type: "string"
+          format: "utf8"
       responses:
         "200":
           description: "Returns an array of applicable Timezones."
