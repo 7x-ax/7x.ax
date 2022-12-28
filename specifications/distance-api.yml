@@ -16,7 +16,6 @@ paths:
     get:
       tags:
         - "distance"
-        - "coordinates"
       summary: "Get the great-circle distance between 2 pairs of co-ordinates."
       description: "Returns distance in either kilometres or miles."
       operationId: "getDistanceByCoordinates"
@@ -51,7 +50,6 @@ paths:
     get:
       tags:
         - "distance"
-        - "address"
       summary: "Get the great-circle distance between 2 addresses."
       description: "Returns distance in either kilometres or miles."
       operationId: "getDistanceByCoordinates"
