@@ -16,6 +16,7 @@ paths:
     get:
       tags:
         - "distance"
+        - "coordinates"
       summary: "Get the great-circle distance between 2 pairs of co-ordinates."
       description: "Returns distance in either kilometres or miles."
       operationId: "getDistanceByCoordinates"
@@ -50,6 +51,7 @@ paths:
     get:
       tags:
         - "distance"
+        - "address"
       summary: "Get the great-circle distance between 2 addresses."
       description: "Returns distance in either kilometres or miles."
       operationId: "getDistanceByCoordinates"
@@ -62,7 +64,7 @@ paths:
           required: true
           type: "string"
           format: "utf8"
-        - name: "from"
+        - name: "to"
           in: "path"
           description: "The second address. Example: Tower Bridge, London, UK."
           required: true
