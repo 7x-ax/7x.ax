@@ -125,4 +125,116 @@ paths:
                   data:
                     type: string
                     example: Not found.
+  /reverse/{coordinates}:
+    get:
+      tags:
+        - reverse-geocode
+      summary: Get location informaiton from geographical coordinates
+      description: Returns location information
+      operationId: getReverseGeocodingData
+      parameters:
+        - name: coordinates
+          in: path
+          description: Comma separated co-ordinates in the order of latitude,longitude
+          example: 24.54940,45.58403
+          required: true
+          schema:
+            type: string
+            format: utf8
+        - name: apikey
+          in: query
+          description: Your 7x API Key. Get it from https://app.7x.ax for free.
+          required: true
+          schema:
+            type: string
+            format: utf8
+      responses:
+        200:
+          description: Returns location data and geographic coordinates.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    description: The HTTP code.
+                    example: 200
+                  status:
+                    type: string
+                    description: The HTTP status.
+                    example: "OK"
+                  data:
+                    type: object
+                    properties:
+                      search:
+                        type: string
+                        description: The coordinates (latitude, longitude) searched for in the coordinates path parameter.
+                        example: 24.4638,45.58302
+                      coordinates:
+                        type: object
+                        properties:
+                          latitude:
+                            type: number
+                            description: The latitude.
+                            example: 25.2048
+                          longitude:
+                            type: number
+                            description: The longitude.
+                            example: 55.2708
+                      location:
+                        type: object
+                        required:
+                          - name
+                          - label
+                          - country
+                        properties:
+                          name:
+                            type: string
+                            description: Name of the location found.
+                            example: Trafalgar Square
+                          label:
+                            type: string
+                            description: Full text label of the location found.
+                            example: Trafalgar Square, London, England, United Kingdom
+                          country:
+                            type: object
+                            properties:
+                              code:
+                                type: string
+                                description: 2 letter ISO code for country.
+                                example: GB
+                              name:
+                                type: string
+                                description: Name of country.
+                          region:
+                            type: string
+                            description: Region the location belongs to.
+                            example: Greater London
+                          locality:
+                            type: string
+                            description: Locality the location belongs to.
+                            example: London
+                          continent:
+                            type: string
+                            description: Continent the location belongs to.
+                            example: Europe
+        404:
+          description: Invalid Co-ordinates.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    description: The HTTP code.
+                    example: 404
+                  status:
+                    type: string
+                    description: The HTTP status.
+                    example: "Not Found."
+                  data:
+                    type: string
+                    example: Invalid Co-ordinates. Nothing found at this location.
 components: {}

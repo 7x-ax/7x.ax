@@ -24,6 +24,7 @@ paths:
         - name: coordinates
           in: path
           description: Comma separated co-ordinates in the order of latitude,longitude
+          example: 24.54940,45.58403
           required: true
           schema:
             type: string
