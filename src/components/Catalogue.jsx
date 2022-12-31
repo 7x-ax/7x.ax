@@ -22,17 +22,18 @@ const positions = [
     publishDate: '2023-01-01',
     publishDateFull: 'January, 2023',
     url: '/catalogue/distance-api',
-  }
-/*  {
+  },
+  {
     id: 3,
     title: 'Geocoding API',
     availableDocs: 'OpenAPI Specification Available',
-    description: 'An API that can convert addresses into co-ordinates.',
+    description: 'An API Geocode locations and addresses and reverse geocode coordinates.',
     security: 'Key-based Authentication',
-    publishDate: '2022-10-01',
-    publishDateFull: 'October, 2020',
-    url: '/catalogue/distance-api',
-  },
+    publishDate: '2023-01-01',
+    publishDateFull: 'January, 2023',
+    url: '/catalogue/geocode-api',
+  }
+/*
   {
     id: 4,
     title: 'Reverse Geocoding API',
