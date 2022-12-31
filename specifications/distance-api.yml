@@ -1,92 +1,226 @@
-swagger: "2.0"
+openapi: 3.0.1
 info:
-  description: "Haversine Distance API by 7x"
-  version: "v1"
-  title: "Distance API"
-  termsOfService: "https://7x.ax/terms-and-conditions"
+  title: Distance API
+  description: Haversine Distance API by 7x
+  termsOfService: https://7x.ax/terms-and-conditions
   contact:
-    email: "support@7x.ax"
-host: "api.7x.ax"
-basePath: "/distance/v1"
-schemes:
-  - "https"
-  - "http"
+    email: support@7x.ax
+  version: v1
+externalDocs:
+  description: Find out more about 7x APIs
+  url: https://7x.ax
+servers:
+  - url: https://api.7x.ax/distance/v1
+  - url: http://api.7x.ax/distance/v1
 paths:
   /bycoordinates/{coordinates}:
     get:
       tags:
-        - "distance"
-      summary: "Get the great-circle distance between 2 pairs of co-ordinates."
-      description: "Returns distance in either kilometres or miles."
-      operationId: "getDistanceByCoordinates"
-      produces:
-        - "application/json"
+        - distance
+      summary: Get the great-circle distance between 2 pairs of co-ordinates.
+      description: Returns distance in either kilometres or miles.
+      operationId: getDistanceByCoordinates
       parameters:
-        - name: "coordinates"
-          in: "path"
-          description: "Comma separated co-ordinates in the order of fromLatitude,fromLongitude,toLatitude,toLongitude."
+        - name: coordinates
+          in: path
+          description: Comma separated co-ordinates in the order of fromLatitude,fromLongitude,toLatitude,toLongitude.
           required: true
-          type: "string"
-          format: "utf8"
-        - name: "unit"
-          in: "query"
-          description: "Unit of distance. 'km' for kilometres and 'mi' for miles."
-          required: false
-          default: "km"
-          type: "string"
-          format: "utf8"
-        - name: "apikey"
-          in: "query"
-          description: "Your 7x API Key. Get it from https://app.7x.ax for free."
+          schema:
+            type: string
+            format: utf8
+        - name: unit
+          in: query
+          description: Unit of distance. 'km' for kilometres and 'mi' for miles.
+          schema:
+            type: string
+            format: utf8
+            default: km
+        - name: apikey
+          in: query
+          description: Your 7x API Key. Get it from https://app.7x.ax for free.
           required: true
-          type: "string"
-          format: "utf8"
+          schema:
+            type: string
+            format: utf8
       responses:
-        "200":
-          description: "Distance Calculated."
-        "400":
-          description: "Invalid Co-ordinates."
+        200:
+          description: Distance Calculated.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    description: The HTTP code.
+                    example: 200
+                  status:
+                    type: string
+                    description: The HTTP status.
+                    example: "OK"
+                  data:
+                    type: object
+                    properties:
+                      distance:
+                        type: number
+                        description: The distance in km or mi.
+                        example: 130.42
+                      unit:
+                        type: string
+                        description: km for kilometres. mi for miles.
+                        example: km
+                      meta:
+                        type: object
+                        properties:
+                          coordinates:
+                            type: object
+                            properties:
+                              from:
+                                type: object
+                                properties:
+                                  latitude:
+                                    type: number
+                                    description: The latitude.
+                                    example: 25.2048
+                                  longitude:
+                                    type: number
+                                    description: The longitude.
+                                    example: 55.2708
+                              to:
+                                type: object
+                                properties:
+                                  latitude:
+                                    type: number
+                                    description: The latitude.
+                                    example: 24.4539
+                                  longitude:
+                                    type: number
+                                    description: The longitude.
+                                    example: 54.3773
+        400:
+          description: Invalid Co-ordinates.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    description: The HTTP code.
+                    example: 400
+                  status:
+                    type: string
+                    description: The HTTP status.
+                    example: "Bad Request."
+                  data:
+                    type: string
+                    example: Invalid Co-ordinates.
   /byaddress/{from}/{to}:
     get:
       tags:
-        - "distance"
-      summary: "Get the great-circle distance between 2 addresses."
-      description: "Returns distance in either kilometres or miles."
-      operationId: "getDistanceByCoordinates"
-      produces:
-        - "application/json"
+        - distance
+      summary: Get the great-circle distance between 2 addresses.
+      description: Returns distance in either kilometres or miles.
       parameters:
-        - name: "from"
-          in: "path"
-          description: "The first address. Example: Trafalgar Square, London, UK."
+        - name: from
+          in: path
+          description: 'The first address. Example: Trafalgar Square, London, UK.'
           required: true
-          type: "string"
-          format: "utf8"
-        - name: "to"
-          in: "path"
-          description: "The second address. Example: Tower Bridge, London, UK."
+          schema:
+            type: string
+            format: utf8
+        - name: to
+          in: path
+          description: 'The second address. Example: Tower Bridge, London, UK.'
           required: true
-          type: "string"
-          format: "utf8"
-        - name: "unit"
-          in: "query"
-          description: "Unit of distance. 'km' for kilometres and 'mi' for miles."
-          required: false
-          default: "km"
-          type: "string"
-          format: "utf8"
-        - name: "apikey"
-          in: "query"
-          description: "Your 7x API Key. Get it from https://app.7x.ax for free."
+          schema:
+            type: string
+            format: utf8
+        - name: unit
+          in: query
+          description: Unit of distance. 'km' for kilometres and 'mi' for miles.
+          schema:
+            type: string
+            format: utf8
+            default: km
+        - name: apikey
+          in: query
+          description: Your 7x API Key. Get it from https://app.7x.ax for free.
           required: true
-          type: "string"
-          format: "utf8"
+          schema:
+            type: string
+            format: utf8
       responses:
-        "200":
-          description: "Distance Calculated."
-        "400":
-          description: "Invalid Co-ordinates."
-
-externalDocs:
-  description: "Find out more about 7x APIs"
-  url: "https://7x.ax"
+        200:
+          description: Distance Calculated.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    description: The HTTP code.
+                    example: 200
+                  status:
+                    type: string
+                    description: The HTTP status.
+                    example: "OK"
+                  data:
+                    type: object
+                    properties:
+                      distance:
+                        type: number
+                        description: The distance in km or mi.
+                        example: 130.42
+                      unit:
+                        type: string
+                        description: km for kilometres. mi for miles.
+                        example: km
+                      meta:
+                        type: object
+                        properties:
+                          coordinates:
+                            type: object
+                            properties:
+                              from:
+                                type: object
+                                properties:
+                                  latitude:
+                                    type: number
+                                    description: The latitude.
+                                    example: 25.2048
+                                  longitude:
+                                    type: number
+                                    description: The longitude.
+                                    example: 55.2708
+                              to:
+                                type: object
+                                properties:
+                                  latitude:
+                                    type: number
+                                    description: The latitude.
+                                    example: 24.4539
+                                  longitude:
+                                    type: number
+                                    description: The longitude.
+                                    example: 54.3773
+        400:
+          description: Invalid Co-ordinates.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    description: The HTTP code.
+                    example: 400
+                  status:
+                    type: string
+                    description: The HTTP status.
+                    example: "Bad Request."
+                  data:
+                    type: string
+                    example: Invalid Co-ordinates.
+components: {}
