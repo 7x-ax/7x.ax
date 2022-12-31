@@ -58,7 +58,7 @@ paths:
                       search:
                         type: string
                         description: The text searched for in the location path parameter.
-                        Example: Trafalgar Square, London, UK
+                        example: Trafalgar Square, London, UK
                       coordinates:
                         type: object
                         properties:
