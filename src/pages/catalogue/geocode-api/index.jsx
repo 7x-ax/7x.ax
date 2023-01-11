@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>7x - Timezone API</title>
+        <title>7x - Geocoding API</title>
         <meta
           name="description"
           content="An API to Geocode and Reverse Geocode locations and coordinates."
