@@ -36,7 +36,7 @@ const faqs = [
       question:
         'Can you develop any custom APIs?',
       answer:
-        'Yes, provided we can come to an agreement about their utility. Please reach to to our support team for more details.',
+        'Yes, provided we can come to an agreement about their utility. Please reach out to our support team for more details.',
     },
   ],
   [
@@ -73,14 +73,14 @@ export function Faqs() {
         unoptimized
       />
       <Container className="relative">
-        <div className="mx-auto max-w-2xl lg:mx-0">
+        <div className="mx-auto max-w-4xl lg:mx-0">
           <h2
             id="faq-title"
             className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl"
           >
             Frequently asked questions
           </h2>
-          <p className="mt-4 text-lg tracking-tight text-slate-700">
+          <p className="mt-2 text-lg tracking-tight text-slate-700">
             If you can’t find what you’re looking for,
             email our support team at <a href="mailto: &#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#055;&#120;&#046;&#097;&#120;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#055;&#120;&#046;&#097;&#120;</a>.
           </p>

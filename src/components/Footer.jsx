@@ -35,6 +35,8 @@ export function Footer() {
           </div>
           <p className="mt-6 text-sm text-slate-500 sm:mt-0">
             Copyright &copy; {new Date().getFullYear()} Mamluk. &reg; All rights reserved.
+            <br />
+            Registered Company No. 14273720. 483 Green Lanes, London, England, N14 4BS, United Kingdom.
           </p>
         </div>
       </Container>
